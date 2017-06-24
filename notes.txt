@@ -1,0 +1,39 @@
+权重下载于20170506
+代码下载于20170523
+darknet19_448.conv.23下载于20170526
+
+
+使用方法：
+./darknet detector test cfg/lisa.data cfg/yolo-lisa.cfg weights/yolo-lisa.weights IMAGE
+./darknet detector demo cfg/lisa.data cfg/yolo-lisa.cfg weights/yolo-lisa.weights
+./darknet detector demo cfg/lisa.data cfg/tiny-yolo-lisa.cfg weights/tiny-yolo-lisa.weights
+
+
+新增文件：
+data/lisa.names
+cfg/lisa.data
+cfg/yolo-lisa.cfg       <<<  yolo-voc.2.0.cfg
+cfg/tiny-yolo-lisa.cfg  <<<  tiny-yolo-voc.cfg
+cfg/yolo-lisa-544.cfg   <<<  yolo-lisa.cfg
+
+src/detector.c  修改recall函数，用以生成PR曲线
+
+generatePRC.sh  生成PR曲线（存放于WEIGHTS相同目录下）
+    用法：bash generatePRC.sh DATACFG CFG WEIGHTS
+
+extractLoss.sh  从log中提取loss
+    用法：bash extractLoss.sh LOG OUTPUT
+
+
+训练时间（Titan X）：
+yolo-lisa       每10K个batch约8.25h
+tiny-yolo-lisa  每10K个batch约2.25h
+
+
+最终模型：
+yolo-lisa       |   60000
+tiny-yolo-lisa  |   40000
+
+
+Work in Progress:
+见TODO.txt

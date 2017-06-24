@@ -24,3 +24,11 @@ ehthumbs.db
 Icon?
 Thumbs.db
 *.swp
+
+# LISA
+LISATS/
+PRC/
+TODO/
+weights/
+yolo-lisa/
+tiny-yolo-lisa/
