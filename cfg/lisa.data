@@ -1,0 +1,5 @@
+classes = 6
+train   = LISATS/train/train.txt
+valid   = LISATS/valid/valid.txt
+names   = data/lisa.names
+backup  = backup/
